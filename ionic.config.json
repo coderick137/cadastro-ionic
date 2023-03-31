@@ -1,0 +1,7 @@
+{
+  "name": "cad-z",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
