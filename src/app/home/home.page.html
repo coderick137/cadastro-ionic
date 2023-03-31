@@ -1,15 +1,48 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="ion-text-start ion-no-margin ion-no-padding" style="font-size: 2rem; font-weight: bold;">Clientes</ion-title>
-    <ion-buttons slot="end">
-      <ion-button
-        color="light"
-        size="small"
-        style="font-size: 0.5rem; background-color: rgb(15, 15, 108);"
-      >
-        <ion-icon name="person-add"></ion-icon>
-        <ion-label>Novo Cliente</ion-label>
-      </ion-button>
-    </ion-buttons>
+    <ion-title class="ion-text-start ion-no-margin ion-no-padding" style="font-size: 2rem; font-weight: bold;">
+      Clientes
+    </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-searchbar
+    placeholder="Pesquisar"
+    animated
+    showCancelButton="focus"
+  ></ion-searchbar>
+  <ion-list>
+    <ion-item
+      button
+      detail
+      lines="none"
+      class="ion-text-wrap"
+    >
+      <ion-avatar slot="start">
+        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" />
+      </ion-avatar>
+      <ion-label>
+        <h2 class="ion-text-uppercase ion-text-bold ion-no-margin">
+          Riardo do Nascimento
+        </h2>
+        <p class="ion-no-margin">
+          <ion-icon name="mail"></ion-icon>
+          <span class="ion-padding-start">riardo@example.com</span>
+        </p>
+        <p class="ion-no-margin">
+          <ion-icon name="call"></ion-icon>
+          <span class="ion-padding-start">+55 11 9999-9999</span>
+        </p>
+        <p class="ion-no-margin">
+          <ion-icon name="card"></ion-icon>
+          <span class="ion-padding-start">013.062.082-38</span>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
