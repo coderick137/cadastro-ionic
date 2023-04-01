@@ -17,25 +17,32 @@
       detail
       lines="none"
       class="ion-text-wrap"
+      *ngFor="let cliente of clientes"
     >
       <ion-avatar slot="start">
         <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" />
       </ion-avatar>
       <ion-label>
         <h2 class="ion-text-uppercase ion-text-bold ion-no-margin">
-          Ricardo do Nascimento Anjos
+          {{ cliente.nome }}
         </h2>
         <p class="ion-no-margin">
           <ion-icon name="mail"></ion-icon>
-          <span class="ion-padding-start">ricardo@example.com</span>
+          <span class="ion-padding-start">
+            {{ cliente.email }}
+          </span>
         </p>
         <p class="ion-no-margin">
           <ion-icon name="call"></ion-icon>
-          <span class="ion-padding-start">+55 11 9999-9999</span>
+          <span class="ion-padding-start">
+            {{ cliente.telefone }}
+          </span>
         </p>
         <p class="ion-no-margin">
           <ion-icon name="card"></ion-icon>
-          <span class="ion-padding-start">013.062.082-38</span>
+          <span class="ion-padding-start">
+            {{ cliente.cpf }}
+          </span>
         </p>
       </ion-label>
     </ion-item>

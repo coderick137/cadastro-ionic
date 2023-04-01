@@ -14,7 +14,9 @@ export class ClientesPage implements OnInit {
 
   constructor(private clientesService: ClientesService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCliente();
+  }
 
   getCliente(): void {
     this.clientesService.getClients().subscribe({
@@ -22,5 +24,13 @@ export class ClientesPage implements OnInit {
         error: (error) => console.log(error)
     });
   }
+
+  getClientById(id: number): void {
+    this.clientesService.getClientById(id).subscribe({
+        next: (cliente) => console.log(cliente),
+        error: (error) => console.log(error)
+    });
+  }
+  
 
 }
