@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ClientesPage } from './clientes/clientes.page';
 
 export const routes: Routes = [
-  {
-    path: 'cadastro',
-    loadComponent: () => import('./cadastro/cadastro.component').then((m) => m.CadastroComponent),
-  },
-  {
-    path: 'clientes',
-    loadComponent: () => import('./clientes/clientes.component').then((m) => m.ClientesComponent),
-  },
   {
     path: '',
     redirectTo: 'clientes',
     pathMatch: 'full',
+  },
+  {
+    path: 'clientes',
+    component: ClientesPage
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   
 ];
