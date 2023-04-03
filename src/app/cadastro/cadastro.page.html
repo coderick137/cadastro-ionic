@@ -3,18 +3,20 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" ></ion-back-button>
     </ion-buttons>
-    <ion-title>Cadastro</ion-title>
+    <ion-title>
+      {{ pageTitle }}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form>
+  <form novalidate (ngSubmit)=createClient() [formGroup]="clienteForm">
     <ion-grid>
       <ion-row>
         <ion-col size="12">
           <ion-item>
             <ion-label position="floating">Nome</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" id="nome" aria-label="nome" formControlName="nome"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -22,7 +24,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label position="floating">Email</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-input type="email" id="email" aria-label="email" formControlName="email"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -30,7 +32,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label position="floating">Telefone</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" id="telefone" aria-label="Telefone" formControlName="telefone"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -38,13 +40,21 @@
         <ion-col size="12">
           <ion-item>
             <ion-label position="floating">CPF</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" id="cpf" aria-label="cpf" formControlName="cpf"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="12">
-          <ion-button expand="block">Cadastrar</ion-button>
+          <ion-button
+            type="submit"
+            color="primary"
+            expand="block"
+            [disabled]="!clienteForm.valid"
+            mode="ios"
+          >
+          Salvar
+        </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
