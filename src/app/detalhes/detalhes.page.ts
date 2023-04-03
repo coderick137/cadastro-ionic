@@ -15,6 +15,7 @@ export class DetalhesPage implements OnInit {
     email: '',
     telefone: ''
   };
+  deletingClienteId: string | undefined;
 
   constructor(
     private clientesService: ClientesService,
@@ -25,6 +26,17 @@ export class DetalhesPage implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.clientesService.getClientById(id).subscribe({
       next: (cliente) => this.cliente = cliente,
+      error: (error) => console.log(error)
+    });
+  }
+
+  deleteCliente(id: number) {
+    this.deletingClienteId = id.toString();
+    this.clientesService.deleteClient(id).subscribe({
+      next: () => {
+        this.deletingClienteId = undefined;
+        this.clientesService.getClients();
+      },
       error: (error) => console.log(error)
     });
   }
