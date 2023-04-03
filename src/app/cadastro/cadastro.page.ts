@@ -76,10 +76,10 @@ export class CadastroPage implements OnInit {
     showClient(cliente: Cliente): void {
       this.cliente = cliente;
       
-      if (this.formMode === ADD_CLIENTE_TITLE) {
-        this.pageTitle = ADD_CLIENTE_TITLE;
+      if (this.formMode === EDIT_MODE) {
+        this.pageTitle = EDIT_CLIENTE_TITLE;
       } else {
-        this.pageTitle = `${EDIT_CLIENTE_TITLE}: ${this.cliente.nome}`;
+        this.pageTitle = ADD_CLIENTE_TITLE;
       }
 
       this.clienteForm.patchValue({

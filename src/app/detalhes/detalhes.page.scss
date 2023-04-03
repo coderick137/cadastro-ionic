@@ -1,0 +1,22 @@
+ion-card {
+  border-radius: 10px;
+  --background: #fff;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #fff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-danger: #f04141;
+  --ion-color-danger-rgb: 240, 65, 65;
+  --ion-color-danger-contrast: #fff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+}
+
+ion-card-header {
+  background-color: #f2f2f2;
+}
+
+ion-card-content {
+  max-width: 400px;
+  margin: 0 auto;
+}

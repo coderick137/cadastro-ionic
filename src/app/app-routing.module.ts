@@ -19,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'cadastro/:id/editar',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'detalhes/:id',
+    loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
   }
   
 ];

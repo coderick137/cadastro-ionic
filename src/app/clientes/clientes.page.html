@@ -18,6 +18,7 @@
       lines="none"
       class="ion-text-wrap"
       *ngFor="let cliente of clientes"
+      [routerLink]="['/detalhes', cliente.id]"
     >
       <ion-avatar slot="start">
         <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" />
@@ -46,6 +47,7 @@
         </p>
       </ion-label>
     </ion-item>
+    
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button
